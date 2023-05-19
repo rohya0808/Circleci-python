@@ -1,0 +1,33 @@
+import unittest
+
+def convert_to_uppercase(input_string):
+    return input_string.upper()
+
+class TestStringConversion(unittest.TestCase):
+
+    def test_uppercase_conversion(self):
+        input_string = "Hello, World!"
+        expected_result = "HELLO, WORLD!"
+        result = convert_to_uppercase(input_string)
+        self.assertEqual(result, expected_result)
+
+    def test_empty_string_conversion(self):
+        input_string = ""
+        expected_result = ""
+        result = convert_to_uppercase(input_string)
+        self.assertEqual(result, expected_result)
+
+    def test_numbers_conversion(self):
+        input_string = "1234"
+        expected_result = "1234"
+        result = convert_to_uppercase(input_string)
+        self.assertEqual(result, expected_result)
+
+    def test_mixed_case_conversion(self):
+        input_string = "HeLlo, WoRld!"
+        expected_result = "HELLO, WORLD!"
+        result = convert_to_uppercase(input_string)
+        self.assertEqual(result, expected_result)
+
+if __name__ == '__main__':
+    unittest.main()
